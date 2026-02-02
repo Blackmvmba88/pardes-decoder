@@ -121,7 +121,6 @@ class PatternDetector:
         parallels = []
         
         for i, seg1 in enumerate(segments):
-            words1 = self.parser.tokenize_words(lowercase=True)
             self.parser.load_text(seg1)
             words1 = self.parser.tokenize_words(lowercase=True)
             

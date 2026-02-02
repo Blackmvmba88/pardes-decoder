@@ -79,7 +79,8 @@ class SemanticGraph:
         for i, sent in enumerate(sentences):
             self._parser.load_text(sent)
             words = set(self._parser.tokenize_words(lowercase=True))
-            sentence_words.append((i, sent[:50] + '...', words))  # Use truncated sentence as label
+            label = sent[:50] + ('...' if len(sent) > 50 else '')
+            sentence_words.append((i, label, words))
         
         # Build graph
         self.graph.clear()
